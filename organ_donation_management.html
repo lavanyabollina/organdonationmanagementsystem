@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organ Donation Management System</title>
+  <style>
+    /* Basic styling for navigation bar */
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Basic styling for forms */
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .form-question {
+      margin-bottom: 10px;
+    }
+
+    /* Styling for input fields */
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    select,
+    textarea {
+      width: calc(100% - 20px); /* Adjust as needed */
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    /* Styling for textarea */
+    textarea {
+      height: 100px;
+    }
+
+    /* Styling for buttons */
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    /* Styling for content section */
+    #contentSection {
+      margin-top: 20px;
+    }
+
+    #contentSection p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .center-heading {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Organ Donation Management Systems</h1>
+  
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#" id="homeBtn">Home</a>
+    <a href="#" id="adminBtn">Admin</a>
+    <a href="#" id="donorBtn">Donor</a>
+    <a href="#" id="patientBtn">Patient</a>
+  </nav>
+
+  <!-- Content Section -->
+<div id="contentSection">
+  <div style="display: flex;">
+    <!-- Half space for image -->
+    <div style="flex: 1;">
+      <img src="https://livercaremumbai.com/wp-content/uploads/2022/01/60a6bbe688a22ab7c0d33777.webp" alt="Organ Donation Image" style="width: 100%; height: auto;">
+    </div>
+    <!-- Half space for description -->
+    <div style="flex: 1; padding-left: 20px;">
+      <h1>Importance of Organ Donation</h1>
+      <p>Organ donation is a life-saving act that can improve the lives of people suffering from organ failure...</p>
+      <!-- Additional paragraphs -->
+      <p>Organ donation not only saves lives but also enhances the quality of life for recipients...</p>
+      <p>By donating organs, you can leave a lasting legacy of compassion and generosity, impacting generations to come...</p>
+      <p>Organ donation is the donation of an organ to a person in need of a transplant in order to enhance his or her condition and health status. It is a technique in which a health organ (donor) is removed from a live or deceased individual and transplanted into a person whose orphan (receiver) is malfunctioning.</p>
+      <p>Organ donation allows recipients to live longer and have a higher quality of life. A transplant may either save or alter a person’s life. Through eye and tissue donation, one organ donor may save up to seven lives and benefit many more. Donors and their families must consent to donate their organs and tissue after death.</p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Admin Login Form -->
+  <div id="adminSection" style="display: none;">
+    <h2 class="center-heading">Admin Login</h2>
+    <div class="form-container">
+      <form id="adminLoginForm" method="post" action="login.php">
+        <div class="form-question">
+          <label for="adminUsername">Username:</label>
+          <input type="text" id="adminUsername" name="adminUsername" required><br>
+        </div>
+        <div class="form-question">
+          <label for="adminPassword">Password:</label>
+          <input type="password" id="adminPassword" name="adminPassword" required><br>
+        </div>
+        <button type="submit" name="login">Login</button>
+      </form>
+    </div>
+  </div>
+
+<!-- Donor Registration Form -->
+  <div id="donorSection" style="display: none;">
+    <h2 class="center-heading">Donor Registration</h2>
+    <div class="form-container">
+      <form id="donorForm" method="post" action="donar_registration.php">
+        <div class="form-question">
+          <label for="donorName">Name:</label>
+          <input type="text" id="donorName" name="donorName" required><br>
+        </div>
+        <div class="form-question">
+          <label for="donorAge">Age:</label>
+          <input type="number" id="donorAge" name="donorAge" required><br>
+        </div>
+        <div class="form-question">
+          <label for="donorGender">Gender:</label>
+          <select id="donorGender" name="donorGender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select><br>
+        </div>
+        <div class="form-question">
+          <label for="donorAddress">Address:</label>
+          <textarea id="donorAddress" name="donorAddress" rows="2" required></textarea><br>
+        </div>
+        <div class="form-question">
+          <label for="donorContact">Contact Number:</label>
+          <input type="text" id="donorContact" name="donorContact" required><br>
+        </div>
+        <div class="form-question">
+          <label for="bloodGroup">Blood Group:</label>
+          <select id="bloodGroup" name="donorBloodGroup" required>
+            <option value="">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <!-- Add more options as needed -->
+          </select><br>
+        </div>
+        <div class="form-question">
+          <label for="organDonatable">Organ Donatable:</label>
+          <select id="organDonatable" name="organDonatable" required>
+            <option value="">Select Organ</option>
+            <option value="Heart">Heart</option>
+            <option value="Liver">Liver</option>
+            <option value="Kidney">Kidney</option>
+            <option value="Eyes">Eyes</option>
+            <option value="Lungs">Lungs</option>
+            <option value="Pancreas">Pancreas</option>
+            <<option value="All">All</option>
+            <!-- Add more options as needed -->
+          </select><br>
+        </div>
+        <button type="submit" name="donorRegistration">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Patient Registration Form -->
+  <div id="patientSection" style="display: none;">
+    <h2 class="center-heading">Patient Registration</h2>
+    <div class="form-container">
+      <form id="patientForm" method="post" action="patient_registration.php">
+        <div class="form-question">
+          <label for="patientName">Name:</label>
+          <input type="text" id="patientName" name="patientName" required><br>
+        </div>
+        <div class="form-question">
+          <label for="patientAge">Age:</label>
+          <input type="number" id="patientAge" name="patientAge" required><br>
+        </div>
+        <div class="form-question">
+          <label for="patientGender">Gender:</label>
+          <select id="patientGender" name="patientGender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select><br>
+        </div>
+        <div class="form-question">
+          <label for="patientAddress">Address:</label>
+          <textarea id="patientAddress" name="patientAddress" rows="2" required></textarea><br>
+        </div>
+        <div class="form-question">
+          <label for="patientContact">Contact Number:</label>
+          <input type="text" id="patientContact" name="patientContact" required><br>
+        </div>
+        <div class="form-question">
+          <label for="bloodGroup">Blood Group:</label>
+          <select id="bloodGroup" name="patientBloodGroup" required>
+            <option value="">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <!-- Add more options as needed -->
+          </select><br>
+        </div>
+        <div class="form-question">
+          <label for="organNeeded">Organ Needed:</label>
+          <select id="organNeeded" name="organNeeded" required>
+            <option value="">Select Organ</option>
+            <option value="Heart">Heart</option>
+            <option value="Liver">Liver</option>
+            <option value="Kidney">Kidney</option>
+            <option value="Eyes">Eyes</option>
+            <option value="Lungs">Lungs</option>
+            <option value="Pancreas">Pancreas</option>
+            <<option value="All">All</option>
+            <!-- Add more options as needed -->
+          </select><br>
+        </div>
+        <button type="submit" name="patientRegistration">Register</button>
+      </form>
+    </div>
+  </div>
+
+  
+
+  <script>
+    // Show/hide sections based on navigation
+    document.getElementById('homeBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('contentSection').style.display = 'block';
+      document.getElementById('adminSection').style.display = 'none';
+      document.getElementById('patientSection').style.display = 'none';
+      document.getElementById('donorSection').style.display = 'none';
+    });
+
+    document.getElementById('adminBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('contentSection').style.display = 'none';
+      document.getElementById('adminSection').style.display = 'block';
+      document.getElementById('patientSection').style.display = 'none';
+      document.getElementById('donorSection').style.display = 'none';
+    });
+   
+    document.getElementById('donorBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('contentSection').style.display = 'none';
+      document.getElementById('adminSection').style.display = 'none';
+      document.getElementById('patientSection').style.display = 'none';
+      document.getElementById('donorSection').style.display = 'block';
+    });
+
+    document.getElementById('patientBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('contentSection').style.display = 'none';
+      document.getElementById('adminSection').style.display = 'none';
+      document.getElementById('patientSection').style.display = 'block';
+      document.getElementById('donorSection').style.display = 'none';
+    });
+
+    
+
+    // Display home section by default
+    document.getElementById('contentSection').style.display = 'block';
+  </script>
+</body>
+</html>
